@@ -1,0 +1,53 @@
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/700.css';
+@import '@fontsource/jost/300.css';
+@import '@fontsource/jost/400.css';
+@import '@fontsource/jost/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: #f5f0e8;
+  color: #1a1a2e;
+}
+
+@layer components {
+  .section-heading {
+    @apply font-cormorant font-bold text-4xl md:text-5xl leading-tight;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl;
+  }
+  .gold-btn {
+    @apply bg-gold text-forest font-jost font-medium text-sm px-6 py-3 rounded
+           hover:bg-gold-light active:scale-[0.97] transition-all duration-200
+           inline-flex items-center gap-2;
+  }
+  .outline-btn {
+    @apply border border-cream/40 text-cream font-jost font-medium text-sm px-6 py-3 rounded
+           hover:border-gold hover:text-gold active:scale-[0.97] transition-all duration-200
+           inline-flex items-center gap-2;
+  }
+  .ghost-btn {
+    @apply text-gold font-jost font-medium text-sm hover:bg-gold/10 px-4 py-2 rounded
+           active:scale-[0.97] transition-all duration-200 inline-flex items-center gap-1;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-forest/15 bg-white text-text-dark
+           text-sm font-jost placeholder-text-muted/50
+           focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold
+           transition-all duration-200;
+  }
+}
+
+/* Cormorant italic helper */
+.italic-gold {
+  font-style: italic;
+  color: #c8a96e;
+}
