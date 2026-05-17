@@ -32,6 +32,7 @@ function ServiceCard({ svc, index }) {
           src={SERVICE_IMAGES[svc.id]}
           alt={svc.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=60' }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
         <div className="absolute top-4 left-4 flex items-center gap-2">

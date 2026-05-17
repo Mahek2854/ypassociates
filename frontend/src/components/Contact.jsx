@@ -49,11 +49,11 @@ export default function Contact() {
     setSuccess(false)
 
     try {
-      await axios.post('http://localhost:8000/api/enquiry', form)
+      await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/enquiry`, form)
       setSuccess(true)
       setForm(EMPTY_FORM)
     } catch {
-      setError('Failed to submit. Please call us directly at +91 9958067860.')
+      setError('Submission failed. Please call us at +91 9958067860 or try again.')
     } finally {
       setLoading(false)
     }

@@ -4,21 +4,24 @@ import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { Toaster } from 'react-hot-toast'
 import App from './App.jsx'
+import ErrorBoundary from './components/ErrorBoundary.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            duration: 4000,
-            style: { background: '#0f1c2e', color: '#f5f0e8', fontFamily: 'Jost, sans-serif' },
-          }}
-        />
-      </BrowserRouter>
-    </HelmetProvider>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <BrowserRouter>
+          <App />
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              duration: 4000,
+              style: { background: '#0f1c2e', color: '#f5f0e8', fontFamily: 'Jost, sans-serif' },
+            }}
+          />
+        </BrowserRouter>
+      </HelmetProvider>
+    </ErrorBoundary>
   </React.StrictMode>,
 )

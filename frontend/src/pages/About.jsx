@@ -6,11 +6,12 @@ import SectionLabel from '../components/ui/SectionLabel'
 import PageTransition from '../components/ui/PageTransition'
 import FadeIn from '../components/ui/FadeIn'
 
+// TODO: Replace placeholder values with real credentials before going live
 const CREDENTIALS = [
   {
     icon: '🏛️',
     title: 'GST Registration',
-    sub: 'GSTIN: 09XXXXX1234Z1Z5',
+    sub: 'GSTIN: 09XXXXX1234Z1Z5', // TODO: Replace with real GSTIN
     desc: 'Fully GST-compliant firm. Proper tax invoices issued for all services.',
   },
   {
@@ -22,7 +23,7 @@ const CREDENTIALS = [
   {
     icon: '⚙️',
     title: 'Chartered Engineer',
-    sub: 'IEI/CE/GZB/2019-XXX',
+    sub: 'IEI/CE/GZB/2019-XXX', // TODO: Replace with real CE registration number
     desc: 'Licensed CE from the Institution of Engineers (India), Ghaziabad Chapter.',
   },
   {
@@ -56,7 +57,7 @@ export default function About() {
     <PageTransition>
       <Helmet>
         <title>About Us — Yatendra Paliwal | Y.P. & Associates</title>
-        <meta name="description" content="Meet Yatendra Paliwal — Chartered Engineer, Government Approved Valuer with 7+ years of expertise in property valuation across Delhi NCT and Pan India." />
+        <meta name="description" content="Meet Yatendra Paliwal — Chartered Engineer, IBBI Registered Valuer with 7+ years of expertise in property valuation across Delhi NCT and Pan India." />
       </Helmet>
 
       {/* Hero */}

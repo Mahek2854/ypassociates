@@ -14,4 +14,5 @@ class Enquiry(Base):
     property_location = Column(String, nullable=False)
     property_type = Column(String, nullable=False)
     message = Column(String, nullable=True)
+    uploaded_files = Column(String, nullable=True)  # JSON array of saved filenames
     created_at = Column(DateTime, default=datetime.utcnow)

@@ -47,6 +47,7 @@ const STEP_FIELDS = {
 export default function Contact() {
   const [step, setStep] = useState(1)
   const [submitting, setSubmitting] = useState(false)
+  const [selectedFiles, setSelectedFiles] = useState([])
 
   const {
     register,
@@ -65,17 +66,23 @@ export default function Contact() {
   const onSubmit = async (data) => {
     setSubmitting(true)
     try {
-      await axios.post('http://localhost:8000/api/enquiry', {
-        name: data.name,
-        phone: data.phone,
-        email: data.email,
-        service: data.service,
-        property_location: data.property_location,
-        property_type: data.property_type,
-        message: `${data.message || ''}\n\nPreferred callback: ${data.callback_time || 'Anytime'}`,
-      })
+      const formData = new FormData()
+      formData.append('name', data.name)
+      formData.append('phone', data.phone)
+      formData.append('email', data.email)
+      formData.append('service', data.service)
+      formData.append('property_location', data.property_location)
+      formData.append('property_type', data.property_type)
+      formData.append('message', `${data.message || ''}\n\nPreferred callback: ${data.callback_time || 'Anytime'}`)
+      selectedFiles.forEach((f) => formData.append('files', f))
+
+      await axios.post(
+        `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/api/enquiry`,
+        formData,
+      )
       toast.success('Enquiry submitted! We\'ll be in touch within 2 hours.')
       setStep(4)
+      setSelectedFiles([])
     } catch {
       toast.error('Something went wrong. Please call us directly at +91 9958067860.')
     } finally {
@@ -206,7 +213,7 @@ export default function Contact() {
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={(e) => e.preventDefault()} onKeyDown={(e) => e.key === 'Enter' && e.preventDefault()}>
                   <div className="p-7">
                     {/* Step 4 — Success */}
                     {step === 4 && (
@@ -329,26 +336,65 @@ export default function Contact() {
                           />
                         </FormField>
                         <FormField label="Attach Documents (optional)">
-                          <div className="border-2 border-dashed border-forest/15 rounded-lg p-4 text-center hover:border-gold/40 transition-colors">
+                          <div
+                            className={`border-2 border-dashed rounded-lg p-4 text-center transition-colors cursor-pointer ${
+                              selectedFiles.length > 0
+                                ? 'border-gold/60 bg-gold/5'
+                                : 'border-forest/15 hover:border-gold/40'
+                            }`}
+                            onClick={() => document.getElementById('file-upload').click()}
+                          >
                             <input
                               type="file"
                               multiple
                               accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
                               className="hidden"
                               id="file-upload"
-                              {...register('files')}
+                              onChange={(e) => setSelectedFiles(Array.from(e.target.files || []))}
                             />
-                            <label htmlFor="file-upload" className="cursor-pointer">
-                              <p className="text-text-muted font-jost text-sm">
-                                📎 Click to attach documents
-                              </p>
-                              <p className="text-text-muted/50 font-jost text-xs mt-1">
-                                PDF, JPG, PNG up to 10MB each
-                              </p>
-                            </label>
+                            {selectedFiles.length === 0 ? (
+                              <>
+                                <p className="text-text-muted font-jost text-sm">📎 Click to attach documents</p>
+                                <p className="text-text-muted/50 font-jost text-xs mt-1">PDF, JPG, PNG, DOC up to 25 MB each</p>
+                              </>
+                            ) : (
+                              <div className="space-y-1.5">
+                                {selectedFiles.map((f, i) => {
+                                  const tooBig = f.size > 25 * 1024 * 1024
+                                  return (
+                                    <div key={i} className={`flex items-center justify-between rounded-lg px-3 py-2 border ${tooBig ? 'bg-red-50 border-red-200' : 'bg-white border-gold/20'}`}>
+                                      <span className={`font-jost text-xs truncate max-w-[70%] ${tooBig ? 'text-red-600' : 'text-forest'}`}>
+                                        {tooBig ? '⚠️' : '📄'} {f.name}
+                                      </span>
+                                      <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                                        <span className={`font-jost text-xs ${tooBig ? 'text-red-500' : 'text-text-muted'}`}>
+                                          {(f.size / 1024).toFixed(0)} KB
+                                        </span>
+                                        {tooBig && <span className="text-red-500 font-jost text-[10px] font-medium">Too large</span>}
+                                      </div>
+                                    </div>
+                                  )
+                                })}
+                                <p className="text-gold font-jost text-xs mt-1 cursor-pointer">+ Add more files</p>
+                              </div>
+                            )}
                           </div>
+                          {selectedFiles.some(f => f.size > 25 * 1024 * 1024) && (
+                            <p className="text-red-500 font-jost text-xs mt-1.5">
+                              ⚠️ Files over 25 MB will not be uploaded. Please compress or send via WhatsApp.
+                            </p>
+                          )}
+                          {selectedFiles.length > 0 && (
+                            <button
+                              type="button"
+                              onClick={() => { setSelectedFiles([]); document.getElementById('file-upload').value = '' }}
+                              className="text-red-400 hover:text-red-600 font-jost text-xs mt-1.5 transition-colors"
+                            >
+                              ✕ Clear all files
+                            </button>
+                          )}
                           <p className="text-text-muted/60 font-jost text-xs mt-1.5">
-                            You can also send documents via WhatsApp after submission.
+                            Documents are saved securely and visible in the admin dashboard.
                           </p>
                         </FormField>
                         <FormField label="Preferred Callback Time">
@@ -383,7 +429,8 @@ export default function Contact() {
                         </button>
                       ) : (
                         <button
-                          type="submit"
+                          type="button"
+                          onClick={handleSubmit(onSubmit)}
                           disabled={submitting}
                           className="flex-1 gold-btn rounded-lg py-3 justify-center disabled:opacity-60 disabled:cursor-not-allowed"
                         >

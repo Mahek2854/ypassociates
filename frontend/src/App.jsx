@@ -7,10 +7,21 @@ import ServiceDetail from './pages/ServiceDetail'
 import About from './pages/About'
 import Process from './pages/Process'
 import Contact from './pages/Contact'
+import Admin from './pages/Admin'
 import NotFound from './pages/NotFound'
 
 export default function App() {
   const location = useLocation()
+
+  // Admin page renders outside the public Layout (no navbar/footer)
+  if (location.pathname === '/admin') {
+    return (
+      <Routes>
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    )
+  }
+
   return (
     <Layout>
       <AnimatePresence mode="wait">
