@@ -125,9 +125,10 @@ function HeroSection() {
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
                 alt="Premium property valuation"
-                className="w-full aspect-[4/3] object-cover"
+                className="w-full object-cover"
+                style={{ minHeight: '580px' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/60 to-transparent" />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, #0f1c2e 0%, #0f1c2ecc 45%, #0f1c2e55 70%, transparent 100%)' }} />
 
               {/* IBBI Badge */}
               <div className="absolute top-5 left-5 bg-gold rounded-xl px-4 py-2.5 shadow-lg">
@@ -158,6 +159,18 @@ function HeroSection() {
                   <p className="text-cream/70 text-sm font-jost">
                     <span className="text-cream font-semibold">5000+</span> satisfied clients
                   </p>
+                </div>
+
+                {/* Empanelment row */}
+                <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(12px)' }}>
+                  <p className="text-gold/80 font-jost text-[10px] uppercase tracking-widest mb-2">Empaneled With</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {['Union Bank of India', 'Punjab National Bank', 'Canara Bank', 'GIC Housing Bank', 'Delhi High Court'].map((b) => (
+                      <span key={b} className="bg-white/10 text-cream/80 font-jost text-[10px] px-2 py-0.5 rounded-full border border-white/10">
+                        {b}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

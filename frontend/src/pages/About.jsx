@@ -11,7 +11,7 @@ const CREDENTIALS = [
   {
     icon: '🏛️',
     title: 'GST Registration',
-    sub: 'GSTIN: 09XXXXX1234Z1Z5', // TODO: Replace with real GSTIN
+    sub: 'GSTIN: 09ANUPP3041K1ZF', // TODO: Replace with real GSTIN
     desc: 'Fully GST-compliant firm. Proper tax invoices issued for all services.',
   },
   {
@@ -99,6 +99,16 @@ export default function About() {
                       <span className="inline-flex items-center justify-center gap-1.5 bg-gold/15 border border-gold/25 text-gold text-[11px] font-jost px-3 py-1 rounded-full">
                         34AB Income Tax Approved Valuer
                       </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 bg-gold/15 border border-gold/25 text-gold text-[11px] font-jost px-3 py-1 rounded-full">
+                        Member of Institution of Valuers , Delhi
+                      </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 bg-gold/15 border border-gold/25 text-gold text-[11px] font-jost px-3 py-1 rounded-full">
+                        Member of Institution of Engineers , Kolkata
+                      </span>
+                      <span className="inline-flex items-center justify-center gap-1.5 bg-gold/15 border border-gold/25 text-gold text-[11px] font-jost px-3 py-1 rounded-full">
+                        Member of  IGBC , India
+                      </span>
+
                     </div>
                   </div>
                   <div className="absolute top-6 right-6 w-16 h-16 rounded-full bg-gold/5 blur-xl" />
@@ -139,7 +149,7 @@ export default function About() {
                   'Chartered Engineer — Institution of Engineers (India)',
                   'IBBI Registered Valuer — Land & Building',
                   '34AB Income Tax Approved Valuer',
-                  'GST Registered Firm — 09XXXXX1234Z1Z5',
+                  'GST Registered Firm — 09ANUPP3041K1ZF',
                   'Registered in Delhi NCT & Uttar Pradesh',
                   '5000+ Valuation Reports Delivered',
                 ].map((c) => (

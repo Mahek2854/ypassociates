@@ -45,8 +45,8 @@ export default function Footer() {
               Government approved Chartered Engineers delivering accurate, bank-accepted property valuation reports across India since 2019.
             </p>
             <div className="space-y-1.5 text-xs font-jost text-cream/40 mb-5">
-              <p><span className="text-gold font-medium">GST:</span> 09XXXXX1234Z1Z5</p>
-              <p><span className="text-gold font-medium">CE Reg:</span> IEI/CE/GZB/2019-XXX</p>
+              <p><span className="text-gold font-medium">GST:</span> 09ANUPP3041K1ZF</p>
+              
             </div>
             {/* Social / contact icons */}
             <div className="flex gap-2">
@@ -119,7 +119,7 @@ export default function Footer() {
               <p className="text-xs font-jost font-medium uppercase tracking-wider text-cream/60 mb-3">Working Hours</p>
               <div className="space-y-1 text-sm font-jost text-cream/45">
                 <p>Mon – Sat: <span className="text-cream/70">9 AM – 7 PM</span></p>
-                <p>Sunday: <span className="text-cream/70">10 AM – 4 PM</span></p>
+                <p>Sunday: <span className="text-cream/70">10 AM – 1 PM</span></p>
               </div>
             </div>
           </div>
@@ -141,15 +141,16 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <EnvelopeIcon className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <div className="text-sm font-jost">
-                  <a href="mailto:info@ypassociates.in" className="text-cream/70 hover:text-gold transition-colors">
-                    info@ypassociates.in
+                  <a href="mailto:valuer@ypassociatesvaluer.com" className="text-cream/70 hover:text-gold transition-colors">
+                   valuer@ypassociatesvaluer.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPinIcon className="w-4 h-4 text-gold mt-0.5 flex-shrink-0" />
                 <p className="text-cream/50 text-sm font-jost leading-relaxed">
-                  Ghaziabad, Uttar Pradesh<br />
+                  272, First Floor, Niti Khand-1,<br />
+                  Indirapuram, Ghaziabad U.P.-201014<br />
                   <span className="text-gold/70">Pan India Service Available</span>
                 </p>
               </div>

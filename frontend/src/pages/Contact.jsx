@@ -137,18 +137,18 @@ export default function Contact() {
                   <ContactBlock
                     Icon={EnvelopeIcon}
                     label="Email"
-                    value="info@ypassociates.in"
-                    href="mailto:info@ypassociates.in"
+                    value="valuer@ypassociatesvaluer.com"
+                    href="mailto:valuer@ypassociatesvaluer.com"
                   />
                   <ContactBlock
                     Icon={MapPinIcon}
                     label="Location"
-                    value="Ghaziabad, Uttar Pradesh — Pan India Service"
+                    value="272, First Floor, Niti Khand-1, Indirapuram, Ghaziabad U.P.-201014"
                   />
                   <ContactBlock
                     Icon={ClockIcon}
                     label="Office Hours"
-                    value="Mon–Sat 9AM–7PM · Sun 10AM–4PM"
+                    value="Mon–Sat 9AM–7PM · Sun 10AM–1PM"
                   />
                 </div>
               </div>
@@ -174,8 +174,8 @@ export default function Contact() {
                 <div className="bg-forest/5 h-52 flex items-center justify-center">
                   <div className="text-center">
                     <MapPinIcon className="w-8 h-8 text-gold mx-auto mb-2" />
-                    <p className="text-text-muted font-jost text-sm">Ghaziabad, UP</p>
-                    <p className="text-text-muted/60 font-jost text-xs">Pan India service · No site visit needed</p>
+                    <p className="text-text-muted font-jost text-sm">Niti Khand-1, Indirapuram</p>
+                    <p className="text-text-muted/60 font-jost text-xs">Ghaziabad U.P.-201014 · Pan India service</p>
                   </div>
                 </div>
               </div>

@@ -102,7 +102,7 @@ export default function Contact() {
                     </svg>
                   }
                   label="Location"
-                  value="Mumbai, Maharashtra — Pan India Service"
+                  value="272, First Floor, Niti Khand-1, Indirapuram, Ghaziabad U.P.-201014"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function Contact() {
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
-                  <span className="font-medium text-forest">10:00 AM – 4:00 PM</span>
+                  <span className="font-medium text-forest">10:00 AM – 1:00 PM</span>
                 </div>
               </div>
               <p className="text-gold text-xs font-medium mt-4 flex items-center gap-1">
@@ -167,7 +167,7 @@ export default function Contact() {
                     type="text"
                     value={form.property_location}
                     onChange={handleChange}
-                    placeholder="e.g. Andheri, Mumbai"
+                    placeholder="e.g. Sector 62, Noida, UP"
                     required
                   />
                   <SelectField

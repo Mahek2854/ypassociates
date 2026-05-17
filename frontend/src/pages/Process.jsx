@@ -33,7 +33,7 @@ const STEPS = [
     title: 'Site Visit / Remote Analysis',
     icon: MagnifyingGlassIcon,
     time: 'Day 1',
-    desc: 'For most reports, we conduct the analysis remotely using the documents, photographs, and location data you share. For complex cases (structural assessments, post-damage valuation), a site visit is arranged.',
+    desc: 'For most reports, our Chartered Engineer physically visits the property to conduct an on-site inspection. This ensures an accurate assessment of the property\'s actual condition, location, and surrounding area.',
     actions: ['Remote analysis using documents & photos', 'Location analysis using satellite & field data', 'Comparable sales research in the area', 'Site visit arranged for complex cases'],
   },
   {
@@ -72,14 +72,14 @@ const DOCUMENTS = [
 ]
 
 const FAQ = [
-  { q: 'Do you need to physically visit the property?', a: 'No, for most reports we work remotely. You share documents, photos, and location details, and we complete the valuation without visiting your property. Site visits are only required for complex structural assessments or post-damage valuations.' },
-  { q: 'How do I share my documents?', a: 'The easiest way is via WhatsApp (+91 9958067860). You can also email them to info@ypassociates.in. We accept PDF, JPG, PNG, and most common document formats. Quality scans are preferred but photos of documents are also fine.' },
+  { q: 'Do you need to physically visit the property?', a: 'Yes, for all valuation reports we conduct a physical site visit to inspect the property firsthand. A site inspection ensures accuracy and allows us to assess the actual condition, location, and surroundings of the property. For certain documentation-based reports (such as capital gain tax FMV certificates for older properties), remote processing may be possible — we will confirm this when you contact us.' },
+  { q: 'How do I share my documents?', a: 'The easiest way is via WhatsApp (+91 9958067860). You can also email them to valuer@ypassociatesvaluer.com. We accept PDF, JPG, PNG, and most common document formats. Quality scans are preferred but photos of documents are also fine. Our engineer will coordinate the site visit timing with you directly.' },
   { q: 'What if I don\'t have all the required documents?', a: 'Contact us first — we\'ll guide you on the minimum documents needed for your specific case. Often, we can work with what you have and request additional documents only if absolutely necessary.' },
   { q: 'How do I receive the report?', a: 'The report is delivered as a PDF via WhatsApp and email. For reports requiring a physical stamp (some bank requirements), we can courier a hard copy to your address or deliver directly to the bank branch.' },
   { q: 'What payment methods do you accept?', a: 'We accept UPI (PhonePe, GPay, Paytm), bank transfer (NEFT/IMPS), and net banking. We send a GST invoice for all payments. Advance payment is typically required before we begin work.' },
   { q: 'Can I get an urgent/same-day report?', a: 'Yes. For most service types, we offer same-day (within 24 hours) delivery for an additional urgent fee. Mention urgent requirement when you contact us and we\'ll confirm availability.' },
   { q: 'What if my bank rejects the report?', a: 'This is very rare, but if it happens, we will investigate the bank\'s specific requirements and revise the report at no charge. We have a very high acceptance rate because we\'re familiar with what each major bank requires.' },
-  { q: 'Do you provide Pan India services?', a: 'Yes. We provide valuation services for properties across all states and union territories of India. Since most of our work is done remotely, location is not a constraint. Simply share your documents and we\'ll take it from there.' },
+  { q: 'Do you provide Pan India services?', a: 'Yes. We provide valuation services for properties across all states and union territories of India. '} ,
 ]
 
 function FAQItem({ q, a }) {
@@ -120,7 +120,7 @@ export default function Process() {
     <PageTransition>
       <Helmet>
         <title>Our Process | Y.P. & Associates — Property Valuation</title>
-        <meta name="description" content="Simple 6-step online process to get your property valuation report. No site visit needed. Share documents and receive your report in 1–2 days." />
+        <meta name="description" content="Simple 6-step process to get your property valuation report. Physical site visit included for most reports. Share documents and receive your report in 1–2 days." />
       </Helmet>
 
       {/* Hero */}

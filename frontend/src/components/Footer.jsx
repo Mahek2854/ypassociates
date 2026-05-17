@@ -73,7 +73,7 @@ export default function Footer() {
                   info@ypassociates.in
                 </a>
               </p>
-              <p className="leading-relaxed">Mumbai, Maharashtra<br />Pan India Service Available</p>
+              <p className="leading-relaxed">272, First Floor, Niti Khand-1,<br />Indirapuram, Ghaziabad U.P.-201014<br />Pan India Service Available</p>
               <a
                 href="#contact"
                 className="inline-block bg-gold text-forest px-4 py-2 rounded text-xs font-semibold hover:bg-yellow-500 transition-colors mt-2"
