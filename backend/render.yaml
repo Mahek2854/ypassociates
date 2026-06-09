@@ -14,7 +14,7 @@ services:
       - key: ADMIN_SECRET_TOKEN
         generateValue: true
       - key: ALLOWED_ORIGINS
-        value: https://www.ypassociates.in,https://ypassociates.in
+        value: https://www.ypassociates.in,https://ypassociates.in,https://ypassociates-bh7h-msrot4tl3-mahekpaliwal-8176s-projects.vercel.app
       - key: RESEND_API_KEY
         sync: false
       - key: EMAIL_RECIPIENT
