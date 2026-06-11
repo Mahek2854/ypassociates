@@ -64,6 +64,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 # ── CORS ──────────────────────────────────────────────────────────────────────
+console.lgo(ALLOWED_ORIGINS);
 _raw_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173,http://localhost:3000")
 allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
 
