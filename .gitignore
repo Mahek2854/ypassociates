@@ -22,5 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-*.env.example
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+myenv/
+venv/
+
+# Database
+*.db
 
